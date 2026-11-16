@@ -1,0 +1,97 @@
+Build a Validation Checklist and Use It
+
+The Story
+CityCare Clinic has 12 doctors, 6 receptionists, and about 400 patients per week. Appointments
+are booked by phone and paper diary, so double bookings and long waits happen often.
+A software company has written a requirements document (SRS) for MediTrack, an online
+appointment system. The clinic is nervous about signing the contract, so they have hired your
+pair as consultants to check the document first.
+Your job: build a checklist, use it on the document, and find the problems.
+Who uses the system: Patient, Doctor, Receptionist, Clinic administrator, Data protection
+officer.
+The clinic manager’s worries:
+ Double bookings must never happen.
+ Patients forget appointments, which costs money.
+ Medical information is private.
+ Elderly patients and emergency walk-ins must not be left out.
+ Monday mornings are very busy.
+The Document You Will Check
+Save this as srs/meditrack-srs.md.
+R-01 The system shall allow patients to book appointments online.
+R-02 The system shall respond quickly to booking requests.
+R-03 The system shall prevent double bookings.
+R-04 Each appointment shall last 15 minutes.
+R-05 The system shall allow doctors to set appointment length between 10 and 30 minutes.
+R-06 The system shall send reminders to patients before appointments.
+R-07 Patients may cancel appointments at any time and the system shall update the doctor’s
+schedule and notify the receptionist.
+R-08 The system shall be user-friendly for all age groups.
+R-09 Patient records shall be stored securely.
+R-10 Receptionists shall be able to book appointments for walk-in patients.
+R-11 Patients may book up to 3 active appointments.
+R-12 The system shall be available during normal working hours.
+R-13 Overdue payments shall be handled as per clinic policy.
+R-14 Doctors shall be able to view their daily schedule.
+
+What Is a Checklist?
+A checklist is a list of yes/no questions you answer by reading a document. Each answer is Yes,
+No, or N/A.
+Rules for Every Checklist Item
+Every item must pass four tests (AOUT):
+Letter Test Ask yourself
+A Atomic Is it only one question? (No “and”.)
+O Observable Can I answer by looking at the document?
+U Unambiguous Would my partner give the same answer?
+T Traceable Do I know why this question exists?
+Also:
+ “Yes” must always be the good answer.
+ Write 15 to 20 items.
+Example:
+ Bad: “Is security good?”
+ Good: “Does the document say which roles may view a patient’s medical record?”
+Part A: Build the Checklist
+Create checklist/v0.1.md with 15 to 20 items. Get your ideas from three places:
+1. Rules of a good document: Is it clear? Testable? Free of contradictions? Complete?
+2. Risks: What could go wrong at this clinic? Find at least 5 risks.
+3. People: If I were each of the 5 users, what would I look for in this document? Write at least one
+item for each user.
+Required table columns:
+Markdown
+ID Item Answer Evidence Where question
+came from
+
+Part B: Use the Checklist
+Alone (30 minutes), no talking to your partner:
+
+ Student A and Student B each answer the checklist separately on the SRS.
+ Save your work as runs/run-A.md and runs/run-B.md.
+ Write Yes, No, or N/A for every item.
+ For every “No”, write the requirement ID and a one-line reason.
+ Mark any item you were unsure about with “?”.
+ Write down your start time and end time.
+Together (20 minutes):
+ Compare your answers.
+ Agree on the real problems in the document.
+ List them in findings.md.
+Example (do not copy): R-02 says “respond quickly”. A checklist question could be “Does
+every speed requirement have a number and a unit?” The answer is No, because “quickly” has no
+number.
+Files to Submit
+lab02/
+├── srs/meditrack-srs.md
+├── checklist/v0.1.md
+├── runs/run-A.md
+├── runs/run-B.md
+└── findings.md
+Common Mistakes
+ Putting “and” inside an item.
+ Vague items like “Is it good?” or “Is it user-friendly?”
+ Mixing polarity, so “Yes” is sometimes bad.
+ More than 20 items.
+ Talking to your partner during the individual run.
+ Hiding items you were unsure about. They show what to improve later.
+Hints
+ Not sure where to start? Pick one worry, such as “double booking”, and write one question about
+it.
+ Look between requirements (do any contradict?) and around them (what is missing?).
+ If you answer “Yes” to almost every item, your checklist is too generic.
